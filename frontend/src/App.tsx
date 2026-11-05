@@ -4,6 +4,7 @@ import { Sidebar } from './components/Layout/Sidebar';
 import { TopBar } from './components/Layout/TopBar';
 import { Overview } from './pages/Overview';
 import { EndpointSecurityPage } from './pages/edr/EndpointSecurityPage';
+import { ThreatIntelligencePage } from './pages/intel/ThreatIntelligencePage';
 import { NAVIGATION_ITEMS } from './constants/navigation';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Overview />} />
               <Route path="/edr" element={<EndpointSecurityPage />} />
+              <Route path="/intel" element={<ThreatIntelligencePage />} />
             </Routes>
           </div>
         </div>
