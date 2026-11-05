@@ -18,18 +18,18 @@
 - [x] Project directory structure
 - [x] .gitignore, README, LICENSE, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, CHANGELOG
 - [x] ARCHITECTURE.md, ROADMAP.md
-- [ ] Backend Core (Spring Boot project, config, health checks)
-- [ ] Database (PostgreSQL schema, Flyway migrations)
-- [ ] Authentication (JWT, BCrypt, login/register)
-- [ ] RBAC (roles, permissions, method security)
+- [x] Backend Core (Spring Boot project, config, health checks)
+- [x] Database (PostgreSQL schema, Flyway migrations)
+- [x] Authentication (JWT, BCrypt, login/register)
+- [x] RBAC (roles, permissions, method security)
 - [ ] Event Bus (Spring ApplicationEvents or custom)
 - [ ] API Gateway (versioned REST, global error handling)
 - [ ] Plugin System (module interface)
-- [ ] Frontend Shell (React, Vite, Tailwind, glassmorphism design system)
-- [ ] Overview Dashboard (security overview, endpoint health, incidents, alerts)
-- [ ] Demo data switch (DEMO MODE toggle)
-- [ ] Unit tests (JUnit, Vitest)
-- [ ] First Git commit
+- [x] Frontend Shell (React, Vite, Tailwind, glassmorphism design system)
+- [x] Overview Dashboard (security overview, endpoint health, incidents, alerts)
+- [x] Demo data switch (DEMO MODE toggle)
+- [x] Unit tests (JUnit, Vitest)
+- [x] First Git commit
 
 ## Phase 2 — EDR (NEXUS EDR)
 
