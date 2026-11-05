@@ -8,6 +8,16 @@ const Overview = lazy(() => import('./pages/Overview').then(m => ({ default: m.O
 const EndpointSecurityPage = lazy(() => import('./pages/edr/EndpointSecurityPage').then(m => ({ default: m.EndpointSecurityPage })));
 const ThreatIntelligencePage = lazy(() => import('./pages/intel/ThreatIntelligencePage').then(m => ({ default: m.ThreatIntelligencePage })));
 const SiemPage = lazy(() => import('./pages/siem/SiemPage').then(m => ({ default: m.SiemPage })));
+const AssetsPage = lazy(() => import('./pages/assets/AssetsPage').then(m => ({ default: m.AssetsPage })));
+const ResponsePage = lazy(() => import('./pages/response/ResponsePage').then(m => ({ default: m.ResponsePage })));
+const VulnPage = lazy(() => import('./pages/vuln/VulnPage').then(m => ({ default: m.VulnPage })));
+const ForensicsPage = lazy(() => import('./pages/forensics/ForensicsPage').then(m => ({ default: m.ForensicsPage })));
+const NetworkPage = lazy(() => import('./pages/network/NetworkPage').then(m => ({ default: m.NetworkPage })));
+const AutomationPage = lazy(() => import('./pages/automation/AutomationPage').then(m => ({ default: m.AutomationPage })));
+const RiskPage = lazy(() => import('./pages/risk/RiskPage').then(m => ({ default: m.RiskPage })));
+const ReportsPage = lazy(() => import('./pages/reports/ReportsPage').then(m => ({ default: m.ReportsPage })));
+const SettingsPage = lazy(() => import('./pages/settings/SettingsPage').then(m => ({ default: m.SettingsPage })));
+const SentinelPage = lazy(() => import('./pages/sentinel/SentinelPage').then(m => ({ default: m.SentinelPage })));
 
 function PageLoader() {
   return (
@@ -39,6 +49,16 @@ function AppContent() {
               <Route path="/edr" element={<EndpointSecurityPage />} />
               <Route path="/intel" element={<ThreatIntelligencePage />} />
               <Route path="/siem" element={<SiemPage />} />
+              <Route path="/sentinel" element={<SentinelPage />} />
+              <Route path="/network" element={<NetworkPage />} />
+              <Route path="/forensics" element={<ForensicsPage />} />
+              <Route path="/vuln" element={<VulnPage />} />
+              <Route path="/response" element={<ResponsePage />} />
+              <Route path="/assets" element={<AssetsPage />} />
+              <Route path="/automation" element={<AutomationPage />} />
+              <Route path="/risk" element={<RiskPage />} />
+              <Route path="/reports" element={<ReportsPage />} />
+              <Route path="/settings" element={<SettingsPage />} />
               <Route path="*" element={<Overview />} />
             </Routes>
           </Suspense>

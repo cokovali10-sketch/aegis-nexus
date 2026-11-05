@@ -21,10 +21,22 @@ function createWindow() {
   const exeDir = path.dirname(process.execPath);
   const frontendPath = path.join(exeDir, 'frontend', 'dist', 'index.html');
   console.log('LOADING FROM:', frontendPath);
-  console.log('EXISTS:', require('fs').existsSync(frontendPath));
 
   mainWindow.loadFile(frontendPath).then(() => {
     console.log('LOADED OK');
+    // Check if React rendered
+    setTimeout(() => {
+      mainWindow.webContents.executeJavaScript('document.getElementById("root").innerHTML.length').then(len => {
+        console.log('ROOT CONTENT LENGTH:', len);
+        if (len === 0) {
+          console.error('REACT DID NOT RENDER!');
+        } else {
+          console.log('REACT RENDERED SUCCESSFULLY');
+        }
+      }).catch(err => {
+        console.error('JS ERROR:', err.message);
+      });
+    }, 3000);
   }).catch((err) => {
     console.error('LOAD FAILED:', err.message);
   });
@@ -35,6 +47,10 @@ function createWindow() {
 
   mainWindow.webContents.on('did-finish-load', () => {
     console.log('DID FINISH LOAD');
+  });
+
+  mainWindow.webContents.on('console-message', (event, level, message, line, sourceId) => {
+    console.log(`[CONSOLE ${level}] ${message}`);
   });
 
   mainWindow.webContents.openDevTools();
