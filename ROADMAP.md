@@ -37,7 +37,7 @@
 - [x] Process monitoring model and service
 - [x] File Integrity Monitoring model and service
 - [x] EDR Agent Management frontend page
-- [ ] Windows Endpoint Agent (Rust, transparent installation)
+- [x] Windows Endpoint Agent (Rust) - registration, heartbeat, process collection, file integrity
 - [ ] System events collection
 - [ ] Detection integration with Sentinel
 - [ ] EDR unit and integration tests
