@@ -19,7 +19,7 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js'),
     },
     backgroundColor: '#080D16',
-    show: false,
+    show: true,
   });
 
   // Show window when ready
@@ -32,8 +32,16 @@ function createWindow() {
     mainWindow.loadURL('http://localhost:5173');
     mainWindow.webContents.openDevTools();
   } else {
-    const frontendPath = path.join(process.resourcesPath, '..', 'frontend', 'dist', 'index.html');
-    mainWindow.loadFile(frontendPath);
+    const exeDir = path.dirname(process.execPath);
+    const frontendPath = path.join(exeDir, 'frontend', 'dist', 'index.html');
+    console.log('Loading frontend from:', frontendPath);
+    mainWindow.loadFile(frontendPath).then(() => {
+      console.log('Frontend loaded successfully');
+      mainWindow.show();
+    }).catch((err) => {
+      console.error('Failed to load frontend:', err);
+      mainWindow.show();
+    });
   }
 
   mainWindow.on('closed', () => {
