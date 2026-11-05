@@ -1,16 +1,26 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { useState, lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Sidebar } from './components/Layout/Sidebar';
 import { TopBar } from './components/Layout/TopBar';
-import { Overview } from './pages/Overview';
-import { EndpointSecurityPage } from './pages/edr/EndpointSecurityPage';
-import { ThreatIntelligencePage } from './pages/intel/ThreatIntelligencePage';
-import { SiemPage } from './pages/siem/SiemPage';
 import { NAVIGATION_ITEMS } from './constants/navigation';
+
+const Overview = lazy(() => import('./pages/Overview').then(m => ({ default: m.Overview })));
+const EndpointSecurityPage = lazy(() => import('./pages/edr/EndpointSecurityPage').then(m => ({ default: m.EndpointSecurityPage })));
+const ThreatIntelligencePage = lazy(() => import('./pages/intel/ThreatIntelligencePage').then(m => ({ default: m.ThreatIntelligencePage })));
+const SiemPage = lazy(() => import('./pages/siem/SiemPage').then(m => ({ default: m.SiemPage })));
+
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center h-64">
+      <div className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
+    </div>
+  );
+}
 
 function AppContent() {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-[#080D16] text-[#EDF5FF] flex flex-col overflow-hidden selection:bg-primary/30">
@@ -19,18 +29,20 @@ function AppContent() {
         <Sidebar
           collapsed={collapsed}
           items={NAVIGATION_ITEMS as unknown as { label: string; icon: string; href: string }[]}
-          activePath={window.location.pathname}
+          activePath={location.pathname}
           onSelect={(path) => navigate(path)}
         />
-        <div className="flex-1 overflow-y-auto p-6">
-          <Routes>
-            <Route path="/" element={<Overview />} />
-            <Route path="/edr" element={<EndpointSecurityPage />} />
-            <Route path="/intel" element={<ThreatIntelligencePage />} />
-            <Route path="/siem" element={<SiemPage />} />
-            <Route path="*" element={<Overview />} />
-          </Routes>
-        </div>
+        <main className="flex-1 overflow-y-auto p-6 scroll-smooth">
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Overview />} />
+              <Route path="/edr" element={<EndpointSecurityPage />} />
+              <Route path="/intel" element={<ThreatIntelligencePage />} />
+              <Route path="/siem" element={<SiemPage />} />
+              <Route path="*" element={<Overview />} />
+            </Routes>
+          </Suspense>
+        </main>
       </div>
     </div>
   );
