@@ -1,0 +1,17 @@
+export const NAVIGATION_ITEMS = [
+  { label: 'Overview', icon: 'LayoutDashboard', href: '/' },
+  { label: 'Endpoint Security', icon: 'Shield', href: '/edr' },
+  { label: 'Threat Intelligence', icon: 'Eye', href: '/intel' },
+  { label: 'SIEM', icon: 'BarChart', href: '/siem' },
+  { label: 'Detection Engine', icon: 'Zap', href: '/sentinel' },
+  { label: 'Network Intelligence', icon: 'Monitor', href: '/network' },
+  { label: 'Digital Forensics', icon: 'Search', href: '/forensics' },
+  { label: 'Vulnerability Management', icon: 'AlertTriangle', href: '/vuln' },
+  { label: 'Incident Response', icon: 'Activity', href: '/response' },
+  { label: 'Asset Management', icon: 'Server', href: '/assets' },
+  { label: 'Automation', icon: 'Bot', href: '/automation' },
+  { label: 'Risk Intelligence', icon: 'ShieldAlert', href: '/risk' },
+  { label: 'Reports', icon: 'FileText', href: '/reports' },
+  { label: 'Integrations', icon: 'Plug', href: '/integrations' },
+  { label: 'Settings', icon: 'Settings', href: '/settings' },
+] as const;

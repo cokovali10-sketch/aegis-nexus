@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: aegis-nexus
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/aegis_nexus
+    username: postgres
+    password:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+app:
+  security:
+    jwt:
+      secret: change-me-in-production-min-32-chars
+      expiration: 86400000
+
+logging:
+  level:
+    root: INFO
+    com.aegis.nexus: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
