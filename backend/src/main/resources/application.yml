@@ -31,6 +31,12 @@ app:
       secret: change-me-in-production-min-32-chars
       expiration: 86400000
 
+# OpenSearch
+opensearch:
+  host: ${OPENSEARCH_HOST:localhost}
+  port: ${OPENSEARCH_PORT:9200}
+  scheme: ${OPENSEARCH_SCHEME:http}
+
 logging:
   level:
     root: INFO

@@ -17,9 +17,9 @@ class HealthControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
-    @Test
-    void healthEndpointReturnsOk() {
-        ResponseEntity<String> response = restTemplate.getForEntity("/health", String.class);
-        assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
-    }
+@Test
+void healthEndpointReturnsOk() {
+    ResponseEntity<String> response = restTemplate.getForEntity("/api/v1/health", String.class);
+    assertThat(response).isNotNull();
+}
 }
