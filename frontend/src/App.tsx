@@ -5,6 +5,7 @@ import { TopBar } from './components/Layout/TopBar';
 import { Overview } from './pages/Overview';
 import { EndpointSecurityPage } from './pages/edr/EndpointSecurityPage';
 import { ThreatIntelligencePage } from './pages/intel/ThreatIntelligencePage';
+import { SiemPage } from './pages/siem/SiemPage';
 import { NAVIGATION_ITEMS } from './constants/navigation';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
               <Route path="/" element={<Overview />} />
               <Route path="/edr" element={<EndpointSecurityPage />} />
               <Route path="/intel" element={<ThreatIntelligencePage />} />
+              <Route path="/siem" element={<SiemPage />} />
             </Routes>
           </div>
         </div>
