@@ -19,11 +19,11 @@ public class Incident {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "severity", nullable = false, length = 20)
+        @Column(name = "severity", columnDefinition = "varchar(50)", nullable = false, length = 20)
     private Severity severity;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, length = 30)
+        @Column(name = "status", columnDefinition = "varchar(50)", nullable = false, length = 30)
     private IncidentStatus status = IncidentStatus.OPEN;
 
     @Column(name = "assignee", length = 100)
@@ -76,3 +76,5 @@ public class Incident {
     public String getNotes() { return notes; }
     public void setNotes(String notes) { this.notes = notes; }
 }
+
+

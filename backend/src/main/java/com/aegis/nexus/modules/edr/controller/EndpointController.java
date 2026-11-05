@@ -62,3 +62,5 @@ public class EndpointController {
         return ResponseEntity.ok(ApiResponse.ok(response, "Endpoint isolation updated"));
     }
 }
+
+

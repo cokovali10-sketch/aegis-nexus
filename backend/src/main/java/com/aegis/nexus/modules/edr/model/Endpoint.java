@@ -31,7 +31,7 @@ public class Endpoint {
     private String agentVersion;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, length = 20)
+        @Column(name = "status", columnDefinition = "varchar(50)", nullable = false, length = 20)
     private EndpointStatus status = EndpointStatus.OFFLINE;
 
     @Column(name = "last_seen_at")
@@ -87,3 +87,5 @@ public class Endpoint {
     public Instant getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(Instant updatedAt) { this.updatedAt = updatedAt; }
 }
+
+

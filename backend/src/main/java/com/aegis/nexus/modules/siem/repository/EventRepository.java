@@ -21,3 +21,5 @@ public interface EventRepository extends JpaRepository<SecurityEvent, String> {
     @Query("SELECT e FROM SecurityEvent e WHERE e.timestamp >= :start ORDER BY e.timestamp DESC")
     List<SecurityEvent> findRecentEvents(Instant start);
 }
+
+

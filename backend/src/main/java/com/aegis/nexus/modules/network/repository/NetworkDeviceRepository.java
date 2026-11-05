@@ -15,3 +15,5 @@ public interface NetworkDeviceRepository extends JpaRepository<NetworkDevice, St
     List<NetworkDevice> findByIsManaged(boolean managed);
     List<NetworkDevice> findByHostname(String hostname);
 }
+
+

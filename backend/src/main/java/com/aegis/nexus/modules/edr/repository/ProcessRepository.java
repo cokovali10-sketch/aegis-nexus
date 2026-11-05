@@ -11,3 +11,5 @@ public interface ProcessRepository extends JpaRepository<Process, String> {
     List<Process> findByEndpointId(String endpointId);
     List<Process> findByEndpointIdAndIsSuspicious(String endpointId, boolean suspicious);
 }
+
+

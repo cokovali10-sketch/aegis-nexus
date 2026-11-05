@@ -14,3 +14,5 @@ public interface AssetRepository extends JpaRepository<Asset, String> {
     List<Asset> findByIsCritical(boolean isCritical);
     List<Asset> findByNameContaining(String name);
 }
+
+

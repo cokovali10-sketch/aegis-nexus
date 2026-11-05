@@ -8,3 +8,5 @@ public record EndpointRegisterRequest(
     String osVersion,
     String agentVersion
 ) {}
+
+

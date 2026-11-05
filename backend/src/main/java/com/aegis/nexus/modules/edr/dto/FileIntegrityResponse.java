@@ -10,3 +10,5 @@ public record FileIntegrityResponse(
     String detectedAt,
     boolean isAuthorized
 ) {}
+
+

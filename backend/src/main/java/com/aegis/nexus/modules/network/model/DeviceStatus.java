@@ -6,3 +6,5 @@ public enum DeviceStatus {
     UNKNOWN,
     SUSPICIOUS
 }
+
+

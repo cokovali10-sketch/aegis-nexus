@@ -31,7 +31,7 @@ public class NetworkDevice {
     private String os;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, length = 20)
+        @Column(name = "status", columnDefinition = "varchar(50)", nullable = false, length = 20)
     private DeviceStatus status = DeviceStatus.UNKNOWN;
 
     @Column(name = "last_seen", nullable = false)
@@ -76,3 +76,5 @@ public class NetworkDevice {
     public int getRiskScore() { return riskScore; }
     public void setRiskScore(int riskScore) { this.riskScore = riskScore; }
 }
+
+

@@ -14,3 +14,5 @@ public record AssetCreateRequest(
     Boolean isCritical,
     String tags
 ) {}
+
+

@@ -11,3 +11,5 @@ public enum ThreatType {
     ADWARE,
     UNKNOWN
 }
+
+

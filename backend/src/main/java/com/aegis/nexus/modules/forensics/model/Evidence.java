@@ -83,3 +83,5 @@ public class Evidence {
     public boolean isIntegrityVerified() { return integrityVerified; }
     public void setIntegrityVerified(boolean integrityVerified) { this.integrityVerified = integrityVerified; }
 }
+
+

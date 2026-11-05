@@ -20,7 +20,8 @@
     "files": [
       "main.js",
       "preload.js",
-      "assets/**/*"
+      "assets/**/*",
+      "../frontend/dist/**/*"
     ],
     "win": {
       "target": "nsis",

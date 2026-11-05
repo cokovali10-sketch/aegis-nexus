@@ -49,3 +49,5 @@ public class AiAnalystController {
         return ResponseEntity.ok(ApiResponse.ok(overview));
     }
 }
+
+

@@ -120,3 +120,5 @@ public class SiemController {
         return ResponseEntity.ok(ApiResponse.ok(stats));
     }
 }
+
+

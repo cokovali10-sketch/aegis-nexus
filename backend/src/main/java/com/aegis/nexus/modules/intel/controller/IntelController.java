@@ -89,3 +89,5 @@ public class IntelController {
         return ResponseEntity.ok(ApiResponse.ok(result));
     }
 }
+
+

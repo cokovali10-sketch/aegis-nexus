@@ -15,3 +15,5 @@ public interface IncidentRepository extends JpaRepository<Incident, String> {
     List<Incident> findByHostname(String hostname);
     List<Incident> findByAssignee(String assignee);
 }
+
+

@@ -52,3 +52,5 @@ public class WorkflowExecution {
     public Instant getCompletedAt() { return completedAt; }
     public void setCompletedAt(Instant completedAt) { this.completedAt = completedAt; }
 }
+
+

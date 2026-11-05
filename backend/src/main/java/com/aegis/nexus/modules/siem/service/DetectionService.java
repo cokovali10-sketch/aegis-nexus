@@ -45,3 +45,5 @@ public class DetectionService {
 
     public record DetectionResult(String ruleName, String description, Severity severity) {}
 }
+
+

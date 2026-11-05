@@ -11,3 +11,5 @@ public interface FileIntegrityRepository extends JpaRepository<FileIntegrityReco
     List<FileIntegrityRecord> findByEndpointId(String endpointId);
     List<FileIntegrityRecord> findByEndpointIdAndIsAuthorized(String endpointId, boolean authorized);
 }
+
+

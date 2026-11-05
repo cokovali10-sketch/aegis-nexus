@@ -15,3 +15,5 @@ public interface AlertRepository extends JpaRepository<Alert, String> {
     List<Alert> findByHostname(String hostname);
     List<Alert> findByAssignee(String assignee);
 }
+
+

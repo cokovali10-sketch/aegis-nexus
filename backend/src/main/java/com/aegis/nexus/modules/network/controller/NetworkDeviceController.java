@@ -62,3 +62,5 @@ public class NetworkDeviceController {
         return ResponseEntity.ok(ApiResponse.ok(response, "Device status updated"));
     }
 }
+
+

@@ -18,3 +18,5 @@ public interface IocRepository extends JpaRepository<Ioc, String> {
     List<Ioc> findByValueContaining(String value);
     boolean existsByTypeAndValue(IocType type, String value);
 }
+
+

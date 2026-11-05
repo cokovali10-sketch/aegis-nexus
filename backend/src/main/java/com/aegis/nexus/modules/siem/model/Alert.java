@@ -19,11 +19,11 @@ public class Alert {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "severity", nullable = false, length = 20)
+        @Column(name = "severity", columnDefinition = "varchar(50)", nullable = false, length = 20)
     private Severity severity;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, length = 20)
+        @Column(name = "status", columnDefinition = "varchar(50)", nullable = false, length = 20)
     private AlertStatus status = AlertStatus.NEW;
 
     @Column(name = "source", length = 255)
@@ -89,3 +89,5 @@ public class Alert {
     public Instant getResolvedAt() { return resolvedAt; }
     public void setResolvedAt(Instant resolvedAt) { this.resolvedAt = resolvedAt; }
 }
+
+

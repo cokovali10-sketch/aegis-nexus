@@ -13,3 +13,5 @@ public record EndpointResponse(
     int riskScore,
     boolean isIsolated
 ) {}
+
+

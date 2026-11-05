@@ -13,3 +13,5 @@ public record NetworkDeviceResponse(
     boolean isManaged,
     int riskScore
 ) {}
+
+

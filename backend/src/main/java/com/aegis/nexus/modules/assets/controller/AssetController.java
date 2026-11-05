@@ -67,3 +67,5 @@ public class AssetController {
         return ResponseEntity.ok(ApiResponse.ok(response, "Critical status updated"));
     }
 }
+
+

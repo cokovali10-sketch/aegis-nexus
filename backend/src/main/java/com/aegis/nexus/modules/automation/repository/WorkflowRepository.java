@@ -11,3 +11,5 @@ public interface WorkflowRepository extends JpaRepository<Workflow, String> {
     List<Workflow> findByIsEnabled(boolean enabled);
     List<Workflow> findByTriggerType(String triggerType);
 }
+
+

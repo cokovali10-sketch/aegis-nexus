@@ -16,11 +16,11 @@ public class SecurityEvent {
     private Instant timestamp = Instant.now();
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "event_type", nullable = false, length = 50)
+        @Column(name = "event_type", columnDefinition = "varchar(50)", nullable = false, length = 50)
     private EventType eventType;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "severity", nullable = false, length = 20)
+        @Column(name = "severity", columnDefinition = "varchar(50)", nullable = false, length = 20)
     private Severity severity = Severity.INFO;
 
     @Column(name = "source", length = 255)
@@ -91,3 +91,5 @@ public class SecurityEvent {
     public Instant getCreatedAt() { return createdAt; }
     public void setCreatedAt(Instant createdAt) { this.createdAt = createdAt; }
 }
+
+

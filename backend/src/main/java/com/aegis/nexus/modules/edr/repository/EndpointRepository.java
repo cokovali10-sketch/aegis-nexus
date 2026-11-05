@@ -14,3 +14,5 @@ public interface EndpointRepository extends JpaRepository<Endpoint, String> {
     List<Endpoint> findByStatus(EndpointStatus status);
     boolean existsByAgentId(String agentId);
 }
+
+

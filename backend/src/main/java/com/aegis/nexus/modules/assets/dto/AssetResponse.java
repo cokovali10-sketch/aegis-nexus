@@ -17,3 +17,5 @@ public record AssetResponse(
     String createdAt,
     String updatedAt
 ) {}
+
+

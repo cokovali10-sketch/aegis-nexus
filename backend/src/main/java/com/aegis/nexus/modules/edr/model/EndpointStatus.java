@@ -7,3 +7,5 @@ public enum EndpointStatus {
     CRITICAL,
     ISOLATED
 }
+
+

@@ -11,3 +11,5 @@ public interface EvidenceRepository extends JpaRepository<Evidence, String> {
     List<Evidence> findByCaseId(String caseId);
     List<Evidence> findByCollectedBy(String collectedBy);
 }
+
+

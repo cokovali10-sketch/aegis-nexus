@@ -15,3 +15,5 @@ public record AlertResponse(
     String updatedAt,
     String resolvedAt
 ) {}
+
+
