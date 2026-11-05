@@ -31,15 +31,14 @@
 - [x] Unit tests (JUnit, Vitest)
 - [x] First Git commit
 
-## Phase 2 — EDR (NEXUS EDR)
+## Phase 2 — EDR (NEXUS EDR) 🟡 In Progress
 
+- [x] Endpoint entity, repository, service, controller (register, list, heartbeat, isolate)
+- [x] Process monitoring model and service
+- [x] File Integrity Monitoring model and service
+- [x] EDR Agent Management frontend page
 - [ ] Windows Endpoint Agent (Rust, transparent installation)
-- [ ] Process monitoring
-- [ ] File Integrity Monitoring
 - [ ] System events collection
-- [ ] Service monitoring
-- [ ] Endpoint inventory dashboard
-- [ ] Agent management (install, uninstall, configure)
 - [ ] Detection integration with Sentinel
 - [ ] EDR unit and integration tests
 

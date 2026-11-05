@@ -31,10 +31,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] — Planned
 
-- Phase 1: Foundation (Backend Core, Auth, RBAC, Event Bus, API Gateway, Plugin System, Frontend Shell, Glassmorphism Design, Overview Dashboard)
-- Phase 2: EDR (Windows Agent, Process Monitoring, File Integrity, System Events, Endpoint Management)
-- Phase 3: Intelligence (OSINT, Threat Intelligence, IOC Database, Domain Analysis, Threat Graph)
-- Phase 4: SIEM & Detection (Event Collector, Normalization, Detection Engine, Correlation Engine, Alert Management)
-- Phase 5: Advanced Security (Network Intelligence, Digital Forensics, Vulnerability Management, Incident Response, Asset Management)
-- Phase 6: Automation & AI (Workflow Builder, AI Analyst, Reports, Advanced Correlation)
-- Phase 7: Production (Security Audit, Performance Testing, E2E Testing, Docker, CI/CD, Release 1.0)
+- Phase 1: Foundation (Backend Core, Auth, RBAC, Event Bus, API Gateway, Plugin System, Frontend Shell, Glassmorphism Design, Overview Dashboard) ✅ Complete
+- Phase 2: EDR (Windows Agent, Process Monitoring, File Integrity, System Events, Endpoint Management) 🟡 In Progress
+  - ✅ Endpoint entity, repository, service, controller
+  - ✅ Process monitoring model and service
+  - ✅ File Integrity Monitoring model and service
+  - ✅ EDR Agent Management frontend page
+  - ⬜ Windows Endpoint Agent (Rust)
+  - ⬜ System events collection
+  - ⬜ Detection integration with Sentinel
+- Phase 3: Intelligence (OSINT, Threat Intelligence, IOC Database, Domain Analysis, Threat Graph) ⬜ Planned
+- Phase 4: SIEM & Detection (Event Collector, Normalization, Detection Engine, Correlation Engine, Alert Management) ⬜ Planned
+- Phase 5: Advanced Security (Network Intelligence, Digital Forensics, Vulnerability Management, Incident Response, Asset Management) ⬜ Planned
+- Phase 6: Automation & AI (Workflow Builder, AI Analyst, Reports, Advanced Correlation) ⬜ Planned
+- Phase 7: Production (Security Audit, Performance Testing, E2E Testing, Docker, CI/CD, Release 1.0) ⬜ Planned
