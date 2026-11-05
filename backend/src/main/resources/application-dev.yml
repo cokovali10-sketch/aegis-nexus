@@ -2,19 +2,26 @@ spring:
   application:
     name: aegis-nexus
   datasource:
-    url: jdbc:postgresql://localhost:5432/aegis_nexus
-    username: postgres
+    url: jdbc:h2:mem:devdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
     password:
-    driver-class-name: org.postgresql.Driver
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: create-drop
-    show-sql: true
+    show-sql: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
 server:
   port: 8080
-  servlet:
-    context-path: /api/v1
 
 app:
   security:

@@ -1,7 +1,9 @@
 package com.aegis.nexus.security;
 
+import org.springframework.context.annotation.Lazy;
 import com.aegis.nexus.security.jwt.JwtService;
 import com.aegis.nexus.security.service.AuthService;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -33,7 +35,7 @@ public class SecurityConfig {
     private final JwtService jwtService;
     private final AuthService authService;
 
-    public SecurityConfig(JwtService jwtService, AuthService authService) {
+    public SecurityConfig(JwtService jwtService, @Lazy AuthService authService) {
         this.jwtService = jwtService;
         this.authService = authService;
     }

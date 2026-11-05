@@ -26,19 +26,20 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
-        String token = authService.authenticate(request.username(), request.password());
-        UserDetails userDetails = org.springframework.security.core.userdetails.User
-                .withUsername(request.username())
-                .password("")
-                .authorities("ROLE_ANALYST")
-                .build();
-        String username = authService.extractUsername(token);
-        return ResponseEntity.ok(new LoginResponse(
-            token,
-            "Bearer",
-            username,
-            "ROLE_ANALYST"
-        ));
+String token = authService.authenticate(request.username(), request.password());
+String username = authService.extractUsername(token);
+// Load user to get actual role
+org.springframework.security.core.userdetails.UserDetails userDetails = authService.loadUserByUsername(username);
+String role = userDetails.getAuthorities().stream()
+    .map(a -> a.getAuthority())
+    .findFirst()
+    .orElse("ROLE_ANALYST");
+return ResponseEntity.ok(new LoginResponse(
+    token,
+    "Bearer",
+    username,
+    role
+));
     }
 
     @PostMapping("/register")

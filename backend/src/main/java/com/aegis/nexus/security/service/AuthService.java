@@ -4,6 +4,7 @@ import com.aegis.nexus.security.jwt.JwtService;
 import com.aegis.nexus.security.model.Role;
 import com.aegis.nexus.security.model.User;
 import com.aegis.nexus.security.repository.UserRepository;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,7 +29,7 @@ public class AuthService implements UserDetailsService {
     public AuthService(UserRepository userRepository,
                        PasswordEncoder passwordEncoder,
                        JwtService jwtService,
-                       AuthenticationManager authenticationManager) {
+                       @Lazy AuthenticationManager authenticationManager) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;

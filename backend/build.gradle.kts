@@ -32,6 +32,7 @@ dependencies {
     implementation("org.opensearch.client:opensearch-java:2.11.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
+    implementation("com.h2database:h2:2.2.224")
     testRuntimeOnly("com.h2database:h2:2.2.224")
 }
 

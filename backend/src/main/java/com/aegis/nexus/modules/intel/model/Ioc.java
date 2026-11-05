@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Table(name = "intel_iocs", uniqueConstraints = @UniqueConstraint(columnNames = {"ioc_type", "value"}))
+@Table(name = "intel_iocs", uniqueConstraints = @UniqueConstraint(columnNames = {"ioc_type", "ioc_value"}))
 public class Ioc {
 
     @Id
@@ -13,10 +13,10 @@ public class Ioc {
     private String id = UUID.randomUUID().toString();
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "ioc_type", nullable = false, length = 30)
+        @Column(name = "ioc_type", columnDefinition = "varchar(50)", nullable = false, length = 30)
     private IocType type;
 
-    @Column(name = "value", nullable = false, length = 500)
+    @Column(name = "ioc_value", nullable = false, length = 500)
     private String value;
 
     @Column(name = "source", length = 255)
@@ -26,7 +26,7 @@ public class Ioc {
     private int confidence = 50;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "threat_type", length = 50)
+        @Column(name = "threat_type", columnDefinition = "varchar(50)", length = 50)
     private ThreatType threatType;
 
     @Column(name = "description", length = 1000)
@@ -73,3 +73,5 @@ public class Ioc {
     public boolean isActive() { return isActive; }
     public void setActive(boolean active) { isActive = active; }
 }
+
+

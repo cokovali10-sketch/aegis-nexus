@@ -30,7 +30,7 @@ public class Process {
     @Column(name = "parent_pid")
     private Integer parentPid;
 
-    @Column(name = "user", length = 100)
+    @Column(name = "process_user", length = 100)
     private String user;
 
     @Column(name = "cpu_usage")
@@ -88,3 +88,5 @@ public class Process {
     public Instant getCreatedAt() { return createdAt; }
     public void setCreatedAt(Instant createdAt) { this.createdAt = createdAt; }
 }
+
+
