@@ -51,7 +51,7 @@ function createWindow() {
 
 function startBackend() {
   const backendPath = path.join(__dirname, '..', 'backend');
-  backendProcess = spawn('java', ['-jar', path.join(backendPath, 'build', 'libs', 'aegis-nexus-1.0.0-SNAPSHOT.jar')], {
+    backendProcess = spawn('java', ['-jar', path.join(backendPath, 'build', 'libs', 'aegis-nexus-backend-1.0.0-SNAPSHOT.jar')], {
     cwd: backendPath,
     stdio: 'pipe',
   });
@@ -70,10 +70,8 @@ function startBackend() {
 }
 
 app.whenReady().then(() => {
-  // Start backend in production mode
-  if (process.env.NODE_ENV !== 'development') {
-    startBackend();
-  }
+  // Don't start backend automatically - user can start it separately
+  // startBackend();
   createWindow();
 
   // Create application menu
