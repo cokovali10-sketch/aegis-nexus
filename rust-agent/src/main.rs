@@ -93,7 +93,8 @@ fn get_hostname() -> String {
 fn get_os_version() -> String {
     #[cfg(target_os = "windows")]
     {
-        env::var("OS_VERSION").unwrap_or_else(|_| env::consts::OS.to_string())
+        // Use Windows version from environment
+        env::var("OS").unwrap_or_else(|_| "Windows".to_string())
     }
     #[cfg(not(target_os = "windows"))]
     {
@@ -173,7 +174,7 @@ fn collect_processes() -> Vec<ProcessInfo> {
             executable_path: proc.exe().map(|p| p.to_string_lossy().to_string()),
             command_line: proc.cmd().iter().map(|s| s.to_string_lossy().to_string()).collect::<Vec<_>>().join(" "),
             parent_pid: proc.parent().map(|p| p.as_u32()),
-            user: None,
+            user: None, // sysinfo 0.31 Process::user() requires Users refresh
             cpu_usage: proc.cpu_usage() as f64,
             memory_mb: proc.memory() as f64 / 1024.0 / 1024.0,
         });
