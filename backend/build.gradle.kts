@@ -28,6 +28,8 @@ dependencies {
     implementation("io.jsonwebtoken:jjwt-api:0.12.3")
     implementation("io.jsonwebtoken:jjwt-impl:0.12.3")
     implementation("io.jsonwebtoken:jjwt-jackson:0.12.3")
+    implementation("org.opensearch.client:opensearch-rest-client:2.11.1")
+    implementation("org.opensearch.client:opensearch-java:2.11.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
     testRuntimeOnly("com.h2database:h2:2.2.224")
